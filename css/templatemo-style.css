@@ -104,6 +104,7 @@ c9av green: #88c425
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    text-decoration: none !important;
 
 }
 .header-icon{
@@ -122,6 +123,12 @@ c9av green: #88c425
 }
 .header-icon i{
     color: #fff;
+}
+.header-icon:hover i{
+    color: #26ade4;
+}
+.header-icons a:hover{
+    text-decoration: none !important;
 }
 
 .image-icon img{
