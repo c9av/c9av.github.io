@@ -4,7 +4,12 @@ c9av blue: #26ade4
 c9av green: #88c425
 */
 
-
+.subfooter{
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    padding: 1em;
+}
 
 
 .pkg-header{
