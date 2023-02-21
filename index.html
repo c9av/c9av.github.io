@@ -520,7 +520,7 @@ Color C9-Green: #88c425
                           </div>
                           <div class="col-md-8">
                             <div class="row">
-                              <form id="contact" onsubmit="return validateForm()" action="https://formspree.io/f/xqkwrzgg" method="post">
+                              <form id="contact" onsubmit="return validateForm();" action="https://formspree.io/f/xqkwrzgg" method="post">
                                 <div class="col-md-4">
                                   <fieldset>
                                     <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -583,9 +583,9 @@ Color C9-Green: #88c425
             function validateForm() {
                 if (document.getElementByID("robot").value != "4"){
                     event.preventDefault();
-                    return False;
+                    return false;
                 }
-                return True;
+                return true;
             }
         </script>
     </body>
