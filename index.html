@@ -581,7 +581,11 @@ Color C9-Green: #88c425
         <script src="js/main.js"></script>
         <script>
             function validateForm() {
-                return (document.getElementByID("robot").value == "4");
+                if (document.getElementByID("robot").value != "4"){
+                    event.preventDefault();
+                    return False;
+                }
+                return True;
             }
         </script>
     </body>
