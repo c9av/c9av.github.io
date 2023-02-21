@@ -7,6 +7,16 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>C9 AudioVisual</title>
+        
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcA36AkAAAAABgTttQKgdPI2TN1ntJQB64-jOzj"></script>
+      <script>
+          grecaptcha.ready(function () {
+              grecaptcha.execute('6LcA36AkAAAAABgTttQKgdPI2TN1ntJQB64-jOzj', {action: 'submit'}).then(function (token) {
+                  console.info("got token: " + token);
+                  document.getElementById('g-recaptcha-response').value = token;
+              });
+          });
+      </script>
 <!--
 Newline Template
 http://www.templatemo.com/tm-503-newline
@@ -25,15 +35,7 @@ Color C9-Green: #88c425
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LcA36AkAAAAABgTttQKgdPI2TN1ntJQB64-jOzj"></script>
-      <script>
-          grecaptcha.ready(function () {
-              grecaptcha.execute('{your-site-key}', {action: 'submit'}).then(function (token) {
-                  console.info("got token: " + token);
-                  document.getElementById('g-recaptcha-response').value = token;
-              });
-          });
-      </script>
+        
     </head>
     <body>
         
