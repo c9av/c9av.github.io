@@ -25,6 +25,15 @@ Color C9-Green: #88c425
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcA36AkAAAAABgTttQKgdPI2TN1ntJQB64-jOzj"></script>
+      <script>
+          grecaptcha.ready(function () {
+              grecaptcha.execute('{your-site-key}', {action: 'submit'}).then(function (token) {
+                  console.info("got token: " + token);
+                  document.getElementById('g-recaptcha-response').value = token;
+              });
+          });
+      </script>
     </head>
     <body>
         
@@ -520,7 +529,7 @@ Color C9-Green: #88c425
                           </div>
                           <div class="col-md-8">
                             <div class="row">
-                              <form id="contact" onsubmit="return validateForm();" action="https://formspree.io/f/xqkwrzgg" method="post">
+                              <form id="contact" action="https://formspree.io/f/xqkwrzgg" method="post">
                                 <div class="col-md-4">
                                   <fieldset>
                                     <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -541,11 +550,9 @@ Color C9-Green: #88c425
                                     <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
                                   </fieldset>
                                 </div>
-                                <div class="col-md-6">
-                                  <fieldset>
-                                    <input name="Robot" type="text" class="form-control" id="robot" placeholder="What is two plus two?" required></input>
-                                  </fieldset>
-                                </div>
+
+                                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
                                 <div class="col-md-12">
                                   <fieldset>
                                       
@@ -579,14 +586,6 @@ Color C9-Green: #88c425
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script>
-            function validateForm() {
-                if (document.getElementByID("robot").value != "4"){
-                    event.preventDefault();
-                    return false;
-                }
-                return true;
-            }
-        </script>
+        
     </body>
 </html>
