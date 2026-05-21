@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://www.google.com/recaptcha/api.js"></script>
+		
 	</head>
 	<body class="is-preload">
 
@@ -118,7 +118,7 @@
 							<div>
 								<section>
 									<h2>Get in touch</h2>
-									<form method="post" action="https://formspree.io/f/xqkwrzgg">
+									<form id="contact-form" method="post" action="https://formspree.io/f/xqkwrzgg">
 										<div class="fields">
 											<div class="field">
 												<input type="text" name="name" id="name" placeholder="Name" required/>
@@ -133,9 +133,9 @@
 												<textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
 											</div>
 										</div>
-										<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+										<!--<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">-->
 										<ul class="actions">
-											<li><input type="submit" value="Send" class="primary g-recaptcha" data-sitekey="6LcA36AkAAAAABgTttQKgdPI2TN1ntJQB64-jOzj"
+											<li><button type="submit" value="Send" class="primary g-recaptcha" data-sitekey="6LcA36AkAAAAABgTttQKgdPI2TN1ntJQB64-jOzj"
             data-callback='onSubmit' data-action='submit'/>
 											</li>
 											<li><input type="reset" value="Reset" /></li>
@@ -156,5 +156,13 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+
+			<script>
+   				function onSubmit(token) {
+    			 document.getElementById("contact-form").submit();
+  				 }
+			 </script>
+		
 	</body>
 </html>
